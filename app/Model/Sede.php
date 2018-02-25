@@ -1,6 +1,6 @@
 <?php
 
-class Sede {
+class Sede extends Magica {
     public function save($nome,$cnpj,$endereco,$numero,$complemento,$cep,$bairro,$cidade,$estado,$tel1,
             $tel2,$email1,$email2,$site,$principal,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';

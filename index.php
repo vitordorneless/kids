@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Main CSS-->    
+        <!-- Main CSS-->
         <link rel="stylesheet" type="text/css" href="app/View/css/vali-admin-master/docs/css/main.css">
         <!-- Font-icon css-->
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Kids</title>
     </head>
     <body>
@@ -28,11 +28,14 @@
                     <div class="form-group">
                         <label class="control-label">Senha</label>
                         <input class="form-control" id="pass" name="pass" type="password" placeholder="Password" />
-                    </div>          
+                    </div>
                     <div class="form-group btn-container">
                         <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Acessar</button>
                     </div>
-                </form>        
+                    <div class="form-group">
+                        <div id="message"></div>
+                    </div>
+                </form>
             </div>
         </section>
     </body>
@@ -42,33 +45,57 @@
     <script src="app/View/css/vali-admin-master/docs/js/bootstrap.min.js"></script>
     <script src="app/View/css/vali-admin-master/docs/js/main.js"></script>
     <!-- The javascript plugin to display page loading on top-->
-    <script src="app/View/css/vali-admin-master/docs/js/plugins/pace.min.js"></script>    
+    <script src="app/View/css/vali-admin-master/docs/js/plugins/pace.min.js"></script>
     <script type="text/javascript" src="app/View/js/validator/dist/jquery.validate.js"></script>
 </html>
+
 <script type="text/javascript">
-    $(document).ready(function () {        
-        
+    $(document).ready(function () {
+
         $.validator.setDefaults({
-                submitHandler: function () {
-                    alert("aqui taka o ajax");
-                }
-            });
-        
-        $("#signupForm").validate({            
-            rules: {                
+            submitHandler: function () {
+
+                $("#message").empty();
+                var user = $("#user").val();
+                var pass = $("#pass").val();
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "HTML",
+                    url: "app/Controller/login.php",
+                    data: "user=" + user + "&pass=" + pass,
+                    beforeSend: function () {
+                        $("#message").html("<img src='app/View/img/loading/Spinner-1s-200px.gif'>");
+                    },
+                    success: function (response) {
+                        if (response === '1') {
+                            window.location.href = "app/View/index.php";
+                        } else {
+                            $("#message").html('Tente novamente, Usuário ou Senha incorretos!'), $("#form")[0].reset();
+                        }
+                    },
+                    error: function () {
+                        alert("Ocorreu um erro durante a requisição");
+                    }
+                });
+            }
+        });
+
+        $("#signupForm").validate({
+            rules: {
                 user: {
                     required: true,
                     minlength: 5
-                },                
+                },
                 pass: {
                     required: true,
                     minlength: 5
-                }                
+                }
             },
-            messages: {                
+            messages: {
                 user: {
                     required: "Informe Login",
-                    minlength: "Login não possui 2 letras"
+                    minlength: "Login não pode possuir 2 letras"
                 },
                 pass: {
                     required: "Informe Senha",

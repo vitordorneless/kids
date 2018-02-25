@@ -1,6 +1,6 @@
 <?php
 
-class Alunos {
+class Alunos extends Magica {
     public function save($nome,$cpf,$nome_mae,$cpf_mae,$tel_mae,$email_mae,$nome_pai,$cpf_pai,$tel_pai,$email_pai,$enviar_email,$contato,$tel_contato,$obs,$nascimento,$id_alergia,$peso,$data_peso,$altura,$data_altura,$deficiente,$data_criacao,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

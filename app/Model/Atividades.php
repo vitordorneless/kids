@@ -1,6 +1,6 @@
 <?php
 
-class Atividades {
+class Atividades extends Magica {
 
     public function save($atividade, $id_tipo_atividade, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

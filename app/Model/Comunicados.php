@@ -1,6 +1,6 @@
 <?php
 
-class Comunicados {
+class Comunicados extends Magica {
     public function save($id_sala,$comunicado,$autorizacao_pais,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

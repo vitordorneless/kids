@@ -1,6 +1,6 @@
 <?php
 
-class Log {
+class Log extends Magica {
     public function save($descricao,$id_operacao,$user,$hora,$dia) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

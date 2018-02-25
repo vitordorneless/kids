@@ -1,6 +1,6 @@
 <?php
 
-class Comeu {
+class Comeu extends Magica {
     public function save($comeu, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

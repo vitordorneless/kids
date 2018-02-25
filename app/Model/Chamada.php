@@ -1,6 +1,6 @@
 <?php
 
-class Chamada {
+class Chamada extends Magica {
 
     public function save($id_salas, $id_alunos, $data_chamada, $dia_semana, $cafe_manha, $lanche_manha, $almoco, $lanche_tarde, $jantar, $presente, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

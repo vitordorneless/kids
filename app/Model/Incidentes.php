@@ -1,6 +1,6 @@
 <?php
 
-class Incidentes {
+class Incidentes extends Magica {
 
     public function save($id_salas, $id_alunos, $ocorrido, $quando, $hora, $chamar_pais, $obs, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

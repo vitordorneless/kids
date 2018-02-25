@@ -1,6 +1,6 @@
 <?php
 
-class Enfermaria {
+class Enfermaria extends Magica {
     public function save($id_alunos,$prescricao,$continuo,$validade_receita,$periodo1,$periodo2,$intervalo_medicamento,$local_receita,$obs,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

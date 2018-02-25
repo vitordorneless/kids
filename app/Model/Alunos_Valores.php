@@ -1,6 +1,6 @@
 <?php
 
-class Alunos_Valores {
+class Alunos_Valores extends Magica {
     public function save($id_alunos,$id_valores,$desconto,$acrescimo,$multa,$valor_total,$competencia,$ano,$comp_ano,$pago,$recibo,$dia_vencimento,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

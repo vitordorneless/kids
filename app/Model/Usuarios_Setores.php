@@ -1,6 +1,6 @@
 <?php
 
-class Usuarios_Setores {
+class Usuarios_Setores extends Magica {
     public function save($setor, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

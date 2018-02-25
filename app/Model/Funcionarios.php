@@ -1,6 +1,6 @@
 <?php
 
-class Funcionarios {
+class Funcionarios extends Magica {
 
     public function save($id_usuario, $id_cargo, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

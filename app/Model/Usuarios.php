@@ -1,6 +1,6 @@
 <?php
 
-class Usuarios {
+class Usuarios extends Magica {
     
     public function save($login, $pass, $id_setor, $nome, $foto, $email, $admin, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

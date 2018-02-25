@@ -1,6 +1,6 @@
 <?php
 
-class Cardapio {
+class Cardapio extends Magica {
 
     public function save($cafe_manha, $lanche_manha, $almoco, $lanche_tarde, $cafe_tarde, $jantar, $lanche_noturno, $dia_cardapio, $faixa_etaria, $id_nutricionista, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

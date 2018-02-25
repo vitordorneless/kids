@@ -1,6 +1,6 @@
 <?php
 
-class Alergia {
+class Alergia extends Magica {
 
     public function save($tipo, $user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';

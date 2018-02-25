@@ -1,1 +1,1 @@
-select * from lanches;
+select * from log;

@@ -1,6 +1,6 @@
 <?php
 
-class Salas {
+class Salas extends Magica {
     public function save($id_sede,$numero_sala,$nome_sala,$max_alunos,$id_prof_titular,$id_prof_reserva,$id_diretora,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

@@ -1,6 +1,6 @@
 <?php
 
-class Valores_Historico {
+class Valores_Historico extends Magica {
     public function save($faixa_etaria, $valor,$data_antes_reajuste,$user_created, $date_created, $user_edit, $date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');

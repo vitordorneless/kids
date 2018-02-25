@@ -1,6 +1,6 @@
 <?php
 
-class Usuarios_Permissoes {
+class Usuarios_Permissoes extends Magica {
     public function save($id_usuario,$super_admin,$admin,$aulas,$user_created,$date_created,$user_edit,$date_edit) {
         include_once '../config/database_mysql.php';
         $data_ultima_alteracao = date('Y-m-d H:i:s');
